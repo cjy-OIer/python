@@ -1,3 +1,4 @@
+'''
 import flask,json
 from flask import request
 
@@ -27,3 +28,18 @@ def login():
 
 if __name__== '__main__':
     server.run(debug=True,port = 443,host='0.0.0.0')#指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问
+
+
+'''
+
+from http.server import BaseHTTPRequestHandler
+ 
+class handler(BaseHTTPRequestHandler):
+ 
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type','text/plain')
+        self.end_headers()
+        self.wfile.write('Hello, world!'.encode('utf-8'))
+        return
+
