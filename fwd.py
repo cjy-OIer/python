@@ -1,27 +1,29 @@
-# 创建基于IPv4和TCP协议的Socket：
-import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# 监听端口:
-s.bind(('127.0.0.1', 9999))
+import flask,json
+from flask import request
 
-s.listen(5)
-print('Waiting for connection...')
 
-while True:
-    # 接受一个新连接:
-    sock, addr = s.accept()
-    # 创建新线程来处理TCP连接:
-    t = threading.Thread(target=tcplink, args=(sock, addr))
-    t.start()
+#创建一个服务，把当前这个python文件当做一个服务
+server = flask.Flask(__name__)
 
-def tcplink(sock, addr):
-    print('Accept new connection from %s:%s...' % addr)
-    sock.send(b'Welcome!')
-    while True:
-        data = sock.recv(1024)
-        time.sleep(1)
-        if not data or data.decode('utf-8') == 'exit':
-            break
-        sock.send(('Hello, %s!' % data.decode('utf-8')).encode('utf-8'))
-    sock.close()
-    print('Connection from %s:%s closed.' % addr)
+#server.route()可以将普通函数转变为服务　登录接口的路径、请求方式
+@server.route('/login',methods=['get','post'])
+def login():
+    #获取通过url请求传参的数据
+    username = request.values.post('test')
+    #获取url请求传的密码，明文
+    pwd=request.values.get('pwd')
+    #判断用户名、密码都不为空，如果不传用户名、密码则username和pwd为None
+    if test:
+        if test=='test_data':
+            resu={'code':200,'message':'测试成功'}
+            return json.dumps(resu,ensure_ascii=False)#将字典转换为Json串，json是字符串
+        else:
+            resu={'code':-1,'message':'测试信息错误'}
+            return json.dumps(resu,ensure_ascii=False)
+
+    else:
+        resu={'code':1001,'message':'参数不能为空'}
+        return json.dumps(resu,ensure_ascii=False)
+
+if __name__== '__main__':
+    server.run(debug=True,port = 443,host='0.0.0.0')#指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问
