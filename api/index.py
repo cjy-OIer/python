@@ -45,6 +45,8 @@ class handler(BaseHTTPRequestHandler):
                 data={"connect":"successfully!"}
             else:
                 data={"type":"uncorrect!"}
+        else:
+            data={"1":"1"}
         #self.wfile.write(b'111')
         '''
         db = pymysql.connect(host='mysql2.sqlpub.com',port=3307,user='hyacine',password='To3gM5etInLYlIMI',database='hyacine',charset='utf8')
@@ -57,8 +59,7 @@ class handler(BaseHTTPRequestHandler):
             "connect": "true"
         }
         '''
-        except:
-            data={"1":"1"}
+        
         json_data = json.dumps(data).encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
