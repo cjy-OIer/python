@@ -34,6 +34,7 @@ if __name__== '__main__':
 
 from http.server import BaseHTTPRequestHandler
 import pymysql
+import json
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self):
@@ -46,9 +47,12 @@ class handler(BaseHTTPRequestHandler):
         cursor.execute("SELECT VERSION()")
         data = cursor.fetchone()
         '''
-        data = 'no connection'
+        data = {
+            "connect": "true"
+        }
+        json_data = json.dumps(data).encode('utf-8')
         self.send_response(200)
-        self.send_header('Content-type','text/plain')
+        self.send_header('Content-type','application/json')
         self.end_headers()
         self.wfile.write('Connecting successfully! v=%s' % data.encode('utf-8'))
         return
