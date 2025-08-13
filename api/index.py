@@ -72,7 +72,7 @@ class handler(BaseHTTPRequestHandler):
     def do_POST(self):
 
         content_length = int(self.headers['Content-Length'])
-        #body = self.rfile.read(content_length)
+        body = self.rfile.read(content_length)
         data={"rslt":"test"}
         '''
         body2=json.loads()
