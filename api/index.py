@@ -37,7 +37,7 @@ import pymysql
 import json
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-
+        
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
         body2=json.loads()
@@ -54,9 +54,9 @@ class handler(BaseHTTPRequestHandler):
             "connect": "true"
         }
         '''
-        if body2['type']=="test_connecting"
+        if body2['type']=="test_connecting":
             data={"connect":"successfully!"}
-        else
+        else:
             data={"type":"uncorrect!"}
         json_data = json.dumps(data).encode('utf-8')
         self.send_response(200)
@@ -87,9 +87,9 @@ class handler(BaseHTTPRequestHandler):
             "connect": "true"
         }
         '''
-        if rtrn
+        if rtrn:
             data={"rslt":rtrn}
-        else
+        else:
             data={"rslt":"No such user!"}
         json_data = json.dumps(data).encode('utf-8')
         self.send_response(200)
