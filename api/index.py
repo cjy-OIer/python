@@ -71,7 +71,7 @@ class handler(BaseHTTPRequestHandler):
         return
     def do_POST(self):
 
-        #content_length = int(self.headers['Content-Length'])
+        content_length = int(self.headers['Content-Length'])
         #body = self.rfile.read(content_length)
         data={"rslt":"test"}
         '''
