@@ -33,13 +33,20 @@ if __name__== '__main__':
 '''
 
 from http.server import BaseHTTPRequestHandler
- 
+import pymysql
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self):
+        db = pymysql.connect(host='mysql2.sqlpub.com:3307',
+                     user='hyacine',
+                     password='To3gM5etInLYlIMI',
+                     database='hyacine')
+        cursor = db.cursor()
+        cursor.execute("SELECT VERSION()")
+        data = cursor.fetchone()
         self.send_response(200)
         self.send_header('Content-type','text/plain')
         self.end_headers()
-        self.wfile.write('Hello, world!'.encode('utf-8'))
+        self.wfile.write('Connecting successfully! v=%s' % data .encode('utf-8'))
         return
 
