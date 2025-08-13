@@ -73,7 +73,7 @@ class handler(BaseHTTPRequestHandler):
 
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
-        data={"rslt":"test"}
+        data=json.loads(body)
         '''
         body2=json.loads()
         
