@@ -77,8 +77,8 @@ class handler(BaseHTTPRequestHandler):
         
         
         
-        theurn=body2['usernm']
-        thepsw=body2['psw']
+        #theurn=body2['usernm']
+        #thepsw=body2['psw']
         
         #self.wfile.write(b'111')
         '''
@@ -98,7 +98,7 @@ class handler(BaseHTTPRequestHandler):
             data={"rslt":"No such user!"}
         '''
         #json_data = json.dumps(data).encode('utf-8')
-        json_data = body2.encode('utf-8')
+        json_data = jsoon.dumps(body2).encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
