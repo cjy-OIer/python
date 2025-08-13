@@ -37,9 +37,9 @@ import pymysql
 import json
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        
-        content_length = int(self.headers['Content-Length'])
         '''
+        content_length = int(self.headers['Content-Length'])
+        
         body = self.rfile.read(content_length)
         body2=json.loads()
         '''
