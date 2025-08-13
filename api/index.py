@@ -97,7 +97,8 @@ class handler(BaseHTTPRequestHandler):
         else:
             data={"rslt":"No such user!"}
         '''
-        json_data = json.dumps(data).encode('utf-8')
+        #json_data = json.dumps(data).encode('utf-8')
+        json_data = body.encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
