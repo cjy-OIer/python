@@ -43,10 +43,14 @@ class handler(BaseHTTPRequestHandler):
                      user='hyacine',
                      password='To3gM5etInLYlIMI',
                      database='hyacine')
+        '''
         cursor = db.cursor()
         cursor.execute("SELECT VERSION()")
         data = cursor.fetchone()
-        
+        '''
+        data = {
+            "connect": "true"
+        }
         json_data = json.dumps(data).encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
