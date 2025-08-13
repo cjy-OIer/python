@@ -81,7 +81,7 @@ class handler(BaseHTTPRequestHandler):
         psw=body2['psw']
         
         #self.wfile.write(b'111')
-        
+        '''
         db = pymysql.connect(host='mysql2.sqlpub.com',port=3307,user='hyacine',password='To3gM5etInLYlIMI',database='hyacine',charset='utf8')
         
         cursor = db.cursor()
@@ -96,9 +96,9 @@ class handler(BaseHTTPRequestHandler):
             data={"rslt":rtrn}
         else:
             data={"rslt":"No such user!"}
-        
+        '''
         #json_data = json.dumps(data).encode('utf-8')
-        json_data = data#.encode('utf-8')
+        json_data = urn#.encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
