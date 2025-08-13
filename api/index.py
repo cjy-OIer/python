@@ -38,7 +38,9 @@ import json
 class handler(BaseHTTPRequestHandler):
  
     def do_GET(self):
-        
+        self.send_response(200)
+        self.send_header('Content-type','application/json')
+        self.end_headers()
         db = pymysql.connect(host='mysql2.sqlpub.com:3307',
                      user='hyacine',
                      password='To3gM5etInLYlIMI',
@@ -52,9 +54,7 @@ class handler(BaseHTTPRequestHandler):
             "connect": "true"
         }
         json_data = json.dumps(data).encode('utf-8')
-        self.send_response(200)
-        self.send_header('Content-type','application/json')
-        self.end_headers()
+        
         self.wfile.write(json_data)
         return
 
