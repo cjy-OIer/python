@@ -54,6 +54,6 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
-        self.wfile.write('Connecting successfully! v=%s' % data.encode('utf-8'))
+        self.wfile.write(json_data)
         return
 
