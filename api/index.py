@@ -37,7 +37,7 @@ import pymysql
 import json
 class handler(BaseHTTPRequestHandler):
  
-    def do_GET(login/self):
+    def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
