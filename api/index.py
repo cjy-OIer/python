@@ -41,6 +41,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
+        self.wfile.write(b'111')
         db = pymysql.Connect(host='mysql2.sqlpub.com',
                      user='hyacine',
                      password='To3gM5etInLYlIMI',
