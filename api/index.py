@@ -73,8 +73,10 @@ class handler(BaseHTTPRequestHandler):
 
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
+        data=body
+        '''
         body2=json.loads()
-
+        
         urn=body2['usernm']
         psw=body2['psw']
         
@@ -85,15 +87,16 @@ class handler(BaseHTTPRequestHandler):
         cursor = db.cursor()
         cursor.execute("SELECT thepassword FROM users WHERE `theusername`= %s ;" % urn)
         rtrn = cursor.fetchone()
-        '''
+        
         data = {
             "connect": "true"
         }
-        '''
+        
         if rtrn:
             data={"rslt":rtrn}
         else:
             data={"rslt":"No such user!"}
+        '''
         json_data = json.dumps(data).encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
