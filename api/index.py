@@ -41,10 +41,12 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
-        db = pymysql.connect(host='mysql2.sqlpub.com:3307',
+        db = pymysql.Connect(host='mysql2.sqlpub.com',
                      user='hyacine',
                      password='To3gM5etInLYlIMI',
-                     database='hyacine')
+                     database='hyacine',
+                     port=3307,
+                     charset='utf8')
         '''
         cursor = db.cursor()
         cursor.execute("SELECT VERSION()")
