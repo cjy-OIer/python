@@ -75,10 +75,10 @@ class handler(BaseHTTPRequestHandler):
         body = self.rfile.read(content_length)
         data=json.loads(body)
         
-        #body2=body
+        body2=data
         
-        #urn=body2['usernm']
-        #psw=body2['psw']
+        urn=body2['usernm']
+        psw=body2['psw']
         
         #self.wfile.write(b'111')
         '''
