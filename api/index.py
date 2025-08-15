@@ -45,7 +45,8 @@ class handler(BaseHTTPRequestHandler):
         cursor = db.cursor()
         cursor.execute("SELECT VERSION()")
         data = cursor.fetchone()
-        
+        cursor.close()
+        db.close()
         
         
         #json_data = json.dumps(data).encode('utf-8')
@@ -53,8 +54,7 @@ class handler(BaseHTTPRequestHandler):
         self.send_header('Content-type','application/json')
         self.end_headers()
         self.wfile.write(b'ok')
-        cursor.close()
-        db.close()
+        
         
         return
     def do_POST(self):
