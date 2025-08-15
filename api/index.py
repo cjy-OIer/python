@@ -69,7 +69,7 @@ class handler(BaseHTTPRequestHandler):
         thepsw=body2['psw']
         
         #self.wfile.write(b'111')
-        
+        '''
         db = pymysql.connect(host='mysql2.sqlpub.com',port=3307,user='hyacine',password='To3gM5etInLYlIMI',database='hyacine',charset='utf8')
         
         cursor = db.cursor()
@@ -77,7 +77,7 @@ class handler(BaseHTTPRequestHandler):
         cursor.execute("SELECT thepassword FROM users WHERE `theusername`= %s ;" % theurn)
         rtrn = cursor.fetchone()
         
-        
+        ''''
         #data = {"connect":"true"}
 
         
