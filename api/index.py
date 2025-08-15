@@ -73,7 +73,7 @@ class handler(BaseHTTPRequestHandler):
 
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
-        body2=json.loads(body.decode('utf-8'))
+        body2=json.loads(body)
         
         
         
@@ -98,7 +98,7 @@ class handler(BaseHTTPRequestHandler):
             data={"rslt":"No such user!"}
         '''
         #json_data = json.dumps(data).encode('utf-8')
-        json_data = json.dumps(body2).encode('utf-8')
+        json_data = json.dumps(body2)#.encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
         self.end_headers()
