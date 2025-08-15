@@ -38,7 +38,7 @@ import json
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         
-        self.wfile.write(b'111')
+        
         
         db = pymysql.connect(host='mysql2.sqlpub.com',port=3307,user='hyacine',password='To3gM5etInLYlIMI',database='hyacine',charset='utf8')
         
