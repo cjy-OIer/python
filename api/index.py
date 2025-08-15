@@ -76,7 +76,7 @@ class handler(BaseHTTPRequestHandler):
         body = self.rfile.read(content_length)
         body2=json.loads(body)
         '''
-        body2={"usernm":usernm,"psw":psw}
+        body2={"usernm":"usernm","psw":"psw"}
         
         #theurn=body2['usernm']
         #thepsw=body2['psw']
