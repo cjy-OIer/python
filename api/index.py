@@ -114,7 +114,7 @@ class handler(BaseHTTPRequestHandler):
         body2=json.loads(body)
         
         
-        '''
+        
         theurn=body2['usernm']
         thepsw=body2['psw']
         
@@ -123,7 +123,7 @@ class handler(BaseHTTPRequestHandler):
         db = pymysql.connect(host='mysql2.sqlpub.com',port=3307,user='hyacine',password='To3gM5etInLYlIMI',database='hyacine',charset='utf8')
         
         cursor = db.cursor()
-        
+        '''
         cursor.execute("SELECT thepassword FROM users WHERE `theusername`= %s ;" % urn)
         rtrn = cursor.fetchone()
         '''
