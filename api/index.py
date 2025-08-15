@@ -40,7 +40,7 @@ class handler(BaseHTTPRequestHandler):
         
         
         
-        db = pymysql.connect(host='mysql2.sqlpub.com',port=3307,user='hyacine',password='To3gM5etInLYlIMI',database='hyacine',charset='utf8')
+        db = pymysql.connect(host='sql200.infinityfree.com',port=3306,user='if0_37770617',password='cjy114514',database='if0_37770617_account',charset='utf8')
         
         cursor = db.cursor()
         cursor.execute("SELECT VERSION()")
