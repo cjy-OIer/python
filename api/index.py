@@ -71,12 +71,12 @@ class handler(BaseHTTPRequestHandler):
         db.close()
         '''
 
-
+        '''
         content_length = int(self.headers['Content-Length'])
         body = self.rfile.read(content_length)
         body2=json.loads(body)
-        
-        
+        '''
+        body2={"usernm":usernm,"psw":psw}
         
         #theurn=body2['usernm']
         #thepsw=body2['psw']
