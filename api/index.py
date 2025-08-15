@@ -115,8 +115,8 @@ class handler(BaseHTTPRequestHandler):
         
         
         
-        #theurn=body2['usernm']
-        #thepsw=body2['psw']
+        theurn=body2['usernm']
+        thepsw=body2['psw']
         
         #self.wfile.write(b'111')
         
