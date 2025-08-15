@@ -81,8 +81,8 @@ class handler(BaseHTTPRequestHandler):
         #data = {"connect":"true"}
 
         
-        if rtrn:
-            data={"rslt":rtrn}
+        if rtrn==thepsw:
+            data={"rslt":"Ok!"}
         else:
             data={"rslt":"No such user!"}
         
