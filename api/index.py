@@ -74,7 +74,7 @@ class handler(BaseHTTPRequestHandler):
         
         cursor = db.cursor()
         
-        cursor.execute("SELECT thepassword FROM users WHERE `theusername`= %s ;" % urn)
+        cursor.execute("SELECT thepassword FROM users WHERE `theusername`= %s ;" % theurn)
         rtrn = cursor.fetchone()
         
         
