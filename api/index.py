@@ -73,19 +73,19 @@ class handler(BaseHTTPRequestHandler):
         db = pymysql.connect(host='mysql2.sqlpub.com',port=3307,user='hyacine',password='To3gM5etInLYlIMI',database='hyacine',charset='utf8')
         
         cursor = db.cursor()
-        '''
+        
         cursor.execute("SELECT thepassword FROM users WHERE `theusername`= %s ;" % urn)
         rtrn = cursor.fetchone()
-        '''
         
-        data = {"connect":"true"}
+        
+        #data = {"connect":"true"}
 
-        '''
+        
         if rtrn:
             data={"rslt":rtrn}
         else:
             data={"rslt":"No such user!"}
-        '''
+        
         json_data = json.dumps(data).encode('utf-8')
         #json_data = json.dumps(body2).encode('utf-8')
         self.send_response(200)
