@@ -46,7 +46,7 @@ class handler(BaseHTTPRequestHandler):
         cursorclass=pymysql.cursors.DictCursor,
         db="defaultdb",
         host="mysql-200bcff3-cjy114514-5fc0.h.aivencloud.com",
-        password="AVNS_TIOmZb
+        password="AVNS_TIOmZbWuFN
         
         
         #json_data = json.dumps(data).encode('utf-8')
