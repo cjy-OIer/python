@@ -30,7 +30,7 @@ if __name__== '__main__':
     server.run(debug=True,port = 443,host='0.0.0.0')#指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问
 
 
-'''
+'''i
 
 from http.server import BaseHTTPRequestHandler
 import pymysql
