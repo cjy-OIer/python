@@ -39,6 +39,12 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         
         
+        timeout = 10
+        connection = pymysql.connect(
+        charset="utf8mb4",
+        connect_timeout=timeout,
+        cursorclass=pymysql.cursors.DictCursor,
+        db="defaultdb",
         
         
         
