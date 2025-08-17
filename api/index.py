@@ -40,13 +40,7 @@ class handler(BaseHTTPRequestHandler):
         
         
         
-        db = pymysql.connect(host='sql200.infinityfree.com',port=3306,user='if0_37770617',password='cjy114514',database='if0_37770617_account',charset='utf8')
         
-        cursor = db.cursor()
-        cursor.execute("SELECT VERSION()")
-        data = cursor.fetchone()
-        cursor.close()
-        db.close()
         
         
         #json_data = json.dumps(data).encode('utf-8')
