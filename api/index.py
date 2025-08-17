@@ -49,7 +49,6 @@ class handler(BaseHTTPRequestHandler):
         password="AVNS_TI
         
         
-        
         #json_data = json.dumps(data).encode('utf-8')
         self.send_response(200)
         self.send_header('Content-type','application/json')
